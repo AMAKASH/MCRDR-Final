@@ -1,0 +1,66 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}Dataset | RDR System{%endblock title %} {% block css_files %}
+<link rel="stylesheet" href="{% static 'rdr_core/css/app.css' %}">
+{% endblock css_files %}
+{% block content %}
+
+
+<h2 class="text-center py-2">Dataset</h2>
+
+{% include 'rdr_core/partials/definitions.html' %}
+
+<h4 class="text-center">Cases:</h4>
+<div class="d-flex justify-content-center">
+    <table class="table table-hover text-center table-striped">
+        <caption>End of Dataset</caption>
+        <thead class="sticky-top stickTop-background ">
+            <tr>
+                <th>
+                    #
+                </th>
+                {% for col in dataset.columns %}
+                {% if col == 'Conclusion' %}
+                <th scope="col"><a href="/run-till-error"><button class="btn btn-light">{{col|title}}</button></a></th>
+                {% else %}
+                <th scope="col">{{col}}</th>
+                {% endif %}
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for index, row in dataset.iterrows %}
+            <tr class="table-row " {% if index == error_row %}{{ 'style="background-color:#f59898" id="focus"' }} {% endif %}>
+                <td>
+                    {{ index }}
+                </td>
+                {% for cell in row %}
+                <td>
+                    {{cell}}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+<p> <span style="color: red;">**</span> Need Further Analysis</p>
+
+{% include 'rdr_core/partials/addRule.html' %}
+
+{% endblock content %}
+{% block js_files %}
+<script>
+    const id = 'focus';
+    const yOffset = -200;
+    const element = document.getElementById(id);
+    if (element) {
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+</script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{% static 'rdr_core/scripts/app.js' %}"></script>
+
+
+{% endblock js_files %}

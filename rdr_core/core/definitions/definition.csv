@@ -1,0 +1,18 @@
+Feature,Definitions,,,,,,
+GEN,"If you checked off any problems, how difficult have these problems made it for you at work, home, or with other people?",Not difficult at all,Somewhat difficult,Very difficult,Extremely difficult,"-","-"
+F1, Do you happen to experience temper outbursts in response to relatively milder situations multiple times through the week?,No,Yes,"-","-","-","-"
+F2," Would you say that you are persistently irritable or angry most of the day, nearly every day?",No,Yes,"-","-","-","-"
+F3, Do you have excessive and persistent worries about specific situations?,Social situation,Losing a major attachment figure,Open Space,Closed space,Any,"None"
+F4, Does the specific situation  always provoke anxiety?,No,Yes,"-","-","-","-"
+F5, Is the worry out of proportion to the actual threat?,No,Yes,"-","-","-","-"
+F6, Do you avoid the specific situation of worry or fear?,No,Yes,"-","-","-","-"
+F7, Do you have physical symptoms for worry or fear?,No,Yes,"-","-","-","-"
+F8, Do you have trouble speaking or unable to speak in specific situations in-spite of speaking in other situations?,No,Yes,"-","-","-","-"
+F9, Is the worry and related symptoms affecting your day to day activities?,No,Yes,"-","-","-","-"
+F10, Do you have excessive anxiety and worry (apprehensive expectation) occurring most of the day?,No,Yes,"-","-","-","-"
+F11, Which one of the following age groups apply to you?,0 to 5,6 to 11,12 to 17,18+,"-","-"
+F12, What gender do you identify as?,Male,Female,Other,-,"-","-"
+F13, Have you ever been diagnosed with any mental disorder?,No,Yes,"-","-","-","-"
+F14, Do you have any medical conditions present that may induce symptoms of mental disorder?,No,Yes,"-","-","-","-"
+F15, Do you have any history of substance usage or medication that may induce symptoms of mental disorder?,No,Yes,"-","-","-","-"
+F16, How long has it been since you experienced at least one of the symptoms you answered yes to?,No Symptom,<2W,<1M,<6M,<2Y,>2Y

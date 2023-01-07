@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}Rules | RDR System{%endblock title %} {% block css_files %}
+
+{% endblock css_files %}
+<link rel="stylesheet" href="style.css" />
+{% block content %}
+<h2 class="text-center py-2">Rules</h2>
+
+<p class="py-2 px-5 fw-italic fs-4">The Rules that drives the System are given Below:</p>
+
+<div class="p-5 d-flex justify-content-center">
+    <table class="table table-hover text-center table-striped table-bordered">
+        <thead class="sticky-top stickTop-background ">
+            <tr>
+                {% for col in column_names %}
+                <th scope="col">{{col}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr class="table-row">
+                {% for cell in row %}
+                <td>
+                    {{cell}}
+                </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+</div>
+{% include 'rdr_core/partials/definitions.html' %}
+{% endblock content %}
+{% block js_files %}
+<script>
+
+</script>
+{% endblock js_files %}

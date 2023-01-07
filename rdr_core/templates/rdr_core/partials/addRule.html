@@ -1,0 +1,129 @@
+<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-fullscreen" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100" id="ModalLongTitle">Add Rule to System</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <h5>Feature Definitions:</h5>
+                    <table class="table table-hover text-center table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="align-middle" scope="col" rowspan="2">Feature No.</th>
+                                <th class="align-middle" scope="col" rowspan="2">Feature Definition</th>
+                                <th scope="col" colspan="6">Values</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">0</th>
+                                <th scope="col">1</th>
+                                <th scope="col">2</th>
+                                <th scope="col">3</th>
+                                <th scope="col">4</th>
+                                <th scope="col">5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for index,row in feature_definitions.iterrows %}
+                            <tr class="definition_row">
+                                {% for cell in row %}
+
+                                {% if forloop.counter0 == 1 %}
+                                <td class="text-start">
+                                    {{cell}}
+                                </td>
+                                {% else %}
+                                <td>
+                                    {{cell}}
+                                </td>
+                                {% endif %}
+
+                                {% endfor %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h5>Rule Check:</h5>
+                    <table class="table table-responsive table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    #
+                                </th>
+                                {% for col in features %}
+                                <th scope="col">{{col}}</th>
+                                {% endfor %}
+                                <th scope="col">Conclusion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="addRule_cur_case">
+                                <th scope="row">current case</th>
+                                {% for col in features %}
+                                <td scope="col">&#x254D;</td>
+                                {% endfor %}
+                                <td scope="col">&#x254D;</td>
+                            </tr>
+                            <tr id="addRule_corner_case">
+                                <th scope="row">cornerstone</th>
+                                {% for col in features %}
+                                <td scope="col">&#x254D;</td>
+                                {% endfor %}
+                                <td scope="col">&#x254D;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button type="button" class="btn btn-secondary" onclick="runCaseAction()">Run Case</button>
+                <span>
+                    <h6>Final Conclusion: <span id="final-conclusion-msg"></span></h6>
+                </span>
+                <div class="my-2">
+                    <h3>Add a new rule for this case:</h3>
+                    <form id="add-rule-form">
+                        <table class="table table-responsive table-hover text-center">
+                            <thead>
+                                <tr>
+                                    {% for col in features %}
+                                    <th scope="col">{{col}}</th>
+                                    {% endfor %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    {% for col in features %}
+                                    <td>
+                                        <input type="text" class="form-control" id="add-condition{{ forloop.counter0 }}"
+                                            name="condition{{ forloop.counter0 }}" placeholder="condition">
+                                    </td>
+                                    {% endfor %}
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <label for="newconclusionInput">Conclusion</label>
+                        <input type="text" class="form-control input-size2" id="conclusion" name="conclusion"
+                            placeholder=" New Conclusion or N/A for Stopping Rule" required>
+
+                    </form>
+                </div>
+                <span class="float-left">
+                    <h6 id="msg-area"></h6>
+                </span>
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="addRuleAction()">Add Rule</button>
+            </div>
+        </div>
+    </div>
+</div>

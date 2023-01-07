@@ -1,0 +1,128 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}RDR System{%endblock title %} {% block css_files %}
+<link rel="stylesheet" href="{% static 'rdr_core/css/app.css' %}">
+{% endblock css_files %}
+{% block content %}
+
+<h1 class="text-center">Home</h1>
+{% if showQuestions %}
+<blockquote class="blockquote p-5 mx-5 my-5">
+    <p class="mb-2 text-center">Welcome to our Website. We built this website as a part of our undergrad thesis titled
+        <strong>Ripple Down Rule Based Decision Intelligence for Mental Disorder Diagnosis.</strong>
+        This system was designed to classify depressive and anxiety disorder along with its severity based on specific
+        questions and running the answers through a Rule based Prediction System. Feel Free to Answer the following
+        questions and checkout what our system has to say about you. <br>
+        Disclaimer: Your answers <strong>will be</strong> stored for further developement of the system but we dont
+        store (Neither Ask about) data related to your identity. Thank you!
+</blockquote>
+
+<form action="" method="POST" id="qa-form" class='card p-5 mx-5 my-5'>
+    <div id="section-A">
+        <h3>Section A</h3>
+        <h5 class='mb-5'>
+            <strong>
+                How do the following symptoms relate to you?
+            </strong>
+        </h5>
+
+        {% for index, row in questions.iterrows %}
+        {% if row.0 == 'A' %}
+        <div class="mb-3">
+            <label class="form-label">{{ row.2 }}</label>
+            {% if row.1 == 't'%}
+            <input type="text" class="form-control" name="qa{{index}}t" required>
+            {% elif row.1 == 'c'%}
+            {% for cell in row%}
+            {% if forloop.counter0 > 2 and cell != '-' %}
+            <input type="checkbox" class="form-check-input" name="qa{{ index }}-{{ forloop.counter0}}c">
+            <label class="form-check-label" for="exampleCheck1">{{ cell }}</label>
+            {% endif %}
+            {% endfor %}
+            {% else %}
+            <select class="form-select w-25" name='qa{{ index }}s'>
+                {% for cell in row%}
+                {% if forloop.counter0 > 2 and cell != '-' %}
+                <option value="{{cell}}">{{cell}}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+            {% endif %}
+
+        </div>
+        {% endif %}
+        {% endfor %}
+        <button type="button" class="btn btn-primary" onclick='toggleAB()'>Next</button>
+    </div>
+    <div id="section-B" class="d-none">
+        <h3>Section B</h3>
+        <h5 class='mb-5'>
+            <strong>
+                Please answer the following questions or mention if the symptom relates to you.
+            </strong>
+        </h5>
+
+        {% for index, row in questions.iterrows %}
+        {% if row.0 == 'B' %}
+        <div class="mb-3">
+            <label class="form-label">{{ row.2 }}</label>
+            {% if row.1 == 't'%}
+            <input type="text" class="form-control w-25" name="qb{{index}}t" required>
+            {% elif row.1 == 'c'%}
+            <fieldset>
+                {% for cell in row%}
+                {% if forloop.counter0 > 2 and cell != '-' %}
+                <div class="d-block">
+                    <input type="checkbox" class="form-check-input" name="qb{{ index }}c" value="{{ cell }}">
+                    <label class="form-check-label mx-1" for="exampleCheck1">{{ cell|title }}</label>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </fieldset>
+            {% else %}
+            <select class="form-select w-25" name='qb{{ index }}s'>
+                {% for cell in row%}
+                {% if forloop.counter0 > 2 and cell != '-' %}
+                <option value="{{cell}}">{{cell}}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
+            {% endif %}
+
+        </div>
+        {% endif %}
+        {% endfor %}
+        <button type="button" class="btn btn-primary" onclick='toggleAB()'>Previous</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+</form>
+{% else %}
+<blockquote class="blockquote p-5 mx-5 my-2">
+    <p class="mb-2 text-center">Thank you for taking the time to use our system. The results are given below:
+</blockquote>
+<div class="w-100 h-100">
+    {% if conclusions %}
+    <h4 class="mb-5 text-center"><span style="color: rgb(64, 61, 250);">You May have the following Disorders
+        </span><span style="color: red;">***</span>:</h4>
+    {% for conclusion in conclusions%}
+    <h5 class="text-center">{{ conclusion }}</h5><br>
+    {% endfor %}
+    {% else %}
+    <h4 class="mb-5 text-center">Great News! You have no Mental Disorder Have A great Day!! :)***</h4>
+    {% endif %}
+
+    <p> <span style="color: red;">**</span> Need Further Analysis</p>
+    <p><span style="color: red;">***</span> We dont claim our system tobe 100% accurate. We request you to not take our
+    Diagnosis as
+    a professional opinion. In case of Severe Feeling Depression/Axiery we recommend you seek professional help.</p>
+</div>
+{% endif %}
+{% endblock content %}
+
+{% block js_files %}
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="{% static 'rdr_core/scripts/index.js' %}"></script>
+
+
+{% endblock js_files %}

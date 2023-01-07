@@ -1,0 +1,88 @@
+{% extends 'base.html' %} {% load static %}
+{% block title %}RDR System{%endblock title %} {% block css_files %}
+<link rel="stylesheet" href="{% static 'rdr_core/css/app.css' %}">
+{% endblock css_files %}
+{% block content %}
+
+<h1 class="text-center">Run Predictions</h1>
+{% if not dataset_present %}
+<form action="" method="POST" id="file-upload-form" enctype="multipart/form-data">
+    <div class="mb-3 load-case-input col-md-4">
+        <label for="formFile" class="form-label">Select a file(csv) with the following columns for loading Test
+            Cases:</label>
+        <label for="formFile" class="form-label">[PHQ, GAD, GEN, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, F13,
+            F14, F15, F16]</label>
+
+        <input class="form-control" type="file" id="testFile" name="csv" required>
+        <input type="submit" id="upload-btn" class="btn btn-primary my-3" value="Load Dataset and Run Predictions ">
+    </div>
+</form>
+{% endif %}
+{% if error %}
+<div class="alert alert-danger" role="alert">
+    {{ error }}
+</div>
+{% endif %}
+
+{% include 'rdr_core/partials/definitions.html' %}
+
+{% if dataset_present %}
+<h4 class="text-center"> Test Cases:</h4>
+<div class="d-flex justify-content-center">
+    <form action="/dataset/add_new_from_test" method="post">
+        <table class="table table-hover text-center table-striped">
+            <thead class="sticky-top stickTop-background " id="focus">
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    {% for col in dataset.columns %}
+                    <th scope="col">{{col}}</th>
+                    {% endfor %}
+                    <th class="col-md-2">
+                        Corrections(if any)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for index, row in dataset.iterrows %}
+                <tr class="table-row">
+                    <td>
+                        {{ index }}
+                    </td>
+                    {% for cell in row %}
+                    <td>
+                        {{cell}}
+                    </td>
+                    {% endfor %}
+                    <td><input type="text" class="form-control w-100" name="correction{{ index }}"
+                            placeholder="Leave blank for correct conclusion">
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+        <p> <span style="color: red;">**</span> Need Further Analysis</p>
+
+        <input type="submit" class="btn btn-primary" value="Add All Datapoints To Training Dataset">
+    </form>
+</div>
+{% endif %}
+
+
+{% endblock content %}
+{% block js_files %}
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    const id = 'focus';
+    const yOffset = -200;
+    const element = document.getElementById(id);
+    if (element) {
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+</script>
+{% endblock js_files %}

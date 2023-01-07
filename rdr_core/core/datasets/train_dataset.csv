@@ -1,0 +1,90 @@
+Sl,PHQ,GAD,GEN,F1,F2,F3,F4,F5,F6,F7,F8,F9,F10,F11,F12,F13,F14,F15,F16,Target
+0,6,3,1,0,0,5,0,0,0,1,1,0,0,1,1,0,0,0,3,Selective Mutism
+1,9,13,1,0,0,0,1,1,1,0,0,1,0,3,0,0,0,0,4,Social Anxiety Disorder
+2,22,20,3,1,1,3,1,1,1,1,1,1,1,3,0,0,0,1,5,"Persistent Depressive Disorder**, Substance/Medication Induced Depressive Disorder, Severe GAD, Agoraphobia, Substance/Medication Induced Anxiety Disorder**"
+3,16,13,2,0,0,1,1,0,1,1,1,1,1,3,0,1,0,0,4,"Mod Severe MDD, Moderate GAD, Separation Anxiety Disorder**"
+4,16,13,1,1,0,3,1,0,1,1,1,1,1,3,1,0,0,0,4,Agoraphobia
+5,24,21,3,0,1,3,1,1,1,1,1,1,1,3,1,1,0,0,5,"Persistent Depressive Disorder**, Severe GAD, Agoraphobia"
+6,2,0,1,0,0,3,0,0,0,0,0,0,0,3,1,0,0,0,0,No Disorder
+7,19,19,3,1,1,2,1,1,0,1,0,1,1,3,1,0,0,1,5,"Persistent Depressive Disorder**, Substance/Medication Induced Depressive Disorder, Severe GAD, Agoraphobia, Substance/Medication Induced Anxiety Disorder**"
+8,9,7,1,0,0,3,0,1,1,1,1,1,0,3,1,0,0,0,5,Agoraphobia
+9,7,6,1,1,0,4,0,0,1,1,1,1,0,3,1,0,0,0,4,Specific Phobia
+10,10,6,1,0,1,2,0,1,1,1,0,0,0,3,0,0,0,0,4,No Disorder
+11,13,18,1,0,1,0,1,1,1,1,1,1,1,3,0,0,1,0,4,"Social Anxiety Disorder, Anxiety Disorder due to Another Medical Condition**"
+12,11,19,3,1,0,0,1,1,0,1,1,1,0,3,1,0,0,0,5,"Moderate MDD, Severe GAD, Social Anxiety Disorder"
+13,10,7,1,0,0,0,1,0,1,0,1,1,0,3,1,0,0,0,4,Social Anxiety Disorder
+14,12,12,1,0,1,1,1,0,1,1,1,1,1,3,0,0,1,1,4,"Separation Anxiety Disorder**, Anxiety Disorder due to Another Medical Condition**, Substance/Medication Induced Anxiety Disorder**"
+15,0,0,0,1,1,2,1,1,1,0,0,0,0,3,2,0,0,1,0,No Disorder
+16,27,21,3,1,1,0,1,1,1,1,1,1,1,3,0,0,0,1,5,"Persistent Depressive Disorder**, Substance/Medication Induced Depressive Disorder, Severe GAD, Social Anxiety Disorder, Substance/Medication Induced Anxiety Disorder**"
+17,19,13,2,1,0,1,1,0,0,1,1,1,0,3,0,0,0,0,4,"Mod Severe MDD, Moderate GAD, Separation Anxiety Disorder**"
+18,12,13,1,0,1,5,1,1,1,1,1,0,1,1,1,0,0,0,4,Selective Mutism
+19,12,14,2,1,1,3,1,1,1,1,1,1,0,3,0,0,0,0,3,"Moderate MDD, Moderate GAD, Agoraphobia"
+20,27,21,3,1,1,1,1,1,1,1,1,1,1,3,0,1,1,1,5,"Persistent Depressive Disorder**, Depressive Disorder due to Another Medical Condition, Substance/Medication Induced Depressive Disorder, Severe GAD, Separation Anxiety Disorder**, Anxiety Disorder due to Another Medical Condition**, Substance/Medication Induced Anxiety Disorder**"
+21,7,10,1,0,0,3,0,0,1,0,0,1,1,3,0,0,0,0,5,Agoraphobia
+22,22,18,2,1,1,1,1,1,1,1,1,1,1,3,0,0,0,0,5,"Persistent Depressive Disorder**, Severe GAD, Separation Anxiety Disorder**"
+23,14,16,0,1,0,3,0,0,1,1,1,1,0,3,1,0,0,0,4,Agoraphobia
+24,5,1,0,0,0,3,0,0,1,1,0,0,0,3,1,0,0,0,0,No Disorder
+25,13,14,1,0,1,3,1,0,1,0,1,1,0,3,0,0,0,0,5,Agoraphobia
+26,5,1,1,0,0,3,0,0,0,0,0,0,0,3,1,0,0,0,2,No Disorder
+27,10,5,1,1,0,1,1,0,1,1,1,1,0,3,1,0,0,0,3,Separation Anxiety Disorder**
+28,4,6,1,0,0,3,0,0,1,0,0,1,0,3,1,0,0,0,5,Agoraphobia
+29,6,3,1,0,1,3,0,0,0,0,0,0,0,3,1,0,0,0,0,No Disorder
+30,24,21,2,1,1,1,1,1,1,1,1,1,1,3,0,0,0,0,5,"Persistent Depressive Disorder**, Severe GAD, Separation Anxiety Disorder**"
+31,15,11,1,1,0,4,1,1,1,1,0,1,1,3,0,0,0,0,3,Specific Phobia
+32,17,13,2,1,0,0,1,1,0,1,1,1,0,3,1,1,0,0,4,"Mod Severe MDD, Moderate GAD, Social Anxiety Disorder"
+33,6,2,1,0,0,2,0,0,0,1,0,0,0,3,0,0,0,0,0,No Disorder
+34,13,16,1,1,0,3,1,0,1,1,0,1,1,3,0,0,0,0,3,Agoraphobia
+35,16,15,1,1,0,3,1,1,1,1,1,1,1,3,1,0,0,0,5,Agoraphobia
+36,9,9,1,1,0,1,1,0,1,1,1,1,0,3,1,0,0,0,4,Separation Anxiety Disorder**
+37,7,13,1,1,1,3,0,0,0,0,0,0,0,3,1,0,0,0,0,No Disorder
+38,19,6,2,1,0,3,0,0,1,1,0,1,1,3,1,0,0,0,5,"Persistent Depressive Disorder**, Mild GAD, Agoraphobia"
+39,17,14,1,1,1,1,1,1,1,1,1,1,0,3,1,0,0,0,3,Separation Anxiety Disorder**
+40,17,15,3,0,0,3,0,0,0,0,0,0,0,3,0,0,0,0,4,Mod Severe MDD
+41,18,14,1,0,0,0,1,0,1,1,1,1,0,3,1,0,0,0,5,Social Anxiety Disorder
+42,13,7,1,1,1,1,1,0,1,1,0,1,0,3,0,0,0,0,5,Separation Anxiety Disorder**
+43,16,15,2,0,0,4,1,1,1,1,1,1,0,3,1,0,0,0,3,"Mod Severe MDD, Severe GAD, Specific Phobia"
+44,4,3,1,1,0,4,0,0,0,0,0,0,0,3,1,0,0,0,0,No Disorder
+45,6,8,1,1,0,4,1,1,0,1,1,0,1,3,1,0,0,0,0,No Disorder
+46,17,15,2,1,1,4,1,1,1,1,0,1,1,3,0,0,0,0,1,"Mod Severe MDD, Severe GAD"
+47,10,5,1,1,0,1,0,0,1,1,1,1,0,3,1,0,0,0,0,No Disorder
+48,22,18,2,1,1,4,1,1,1,1,1,1,1,3,1,0,1,0,3,"Severe MDD, Depressive Disorder due to Another Medical Condition, Severe GAD, Specific Phobia, Anxiety Disorder due to Another Medical Condition**"
+49,7,6,1,0,0,4,0,0,0,1,0,1,1,3,1,1,1,1,4,"Specific Phobia, Anxiety Disorder due to Another Medical Condition**, Substance/Medication Induced Anxiety Disorder**"
+50,0,3,0,0,0,1,0,0,1,0,0,1,0,3,1,0,0,0,3,Separation Anxiety Disorder**
+51,12,14,1,1,0,4,1,1,0,1,0,1,1,3,0,0,1,0,4,"Specific Phobia, Anxiety Disorder due to Another Medical Condition**"
+52,14,10,1,1,0,2,0,0,1,1,0,1,0,3,0,0,0,0,4,Agoraphobia
+53,17,18,1,1,1,1,1,1,0,1,0,1,1,3,0,0,1,0,3,"Separation Anxiety Disorder**, Anxiety Disorder due to Another Medical Condition**"
+54,3,4,1,0,0,3,0,0,0,0,0,0,0,3,1,0,0,0,0,No Disorder
+55,14,21,2,1,0,3,1,1,1,1,0,1,0,3,0,0,0,0,3,"Moderate MDD, Severe GAD, Agoraphobia"
+56,13,19,3,1,1,1,1,1,0,1,1,1,1,3,1,0,1,0,4,"Moderate MDD, Severe GAD, Separation Anxiety Disorder**, Anxiety Disorder due to Another Medical Condition**"
+57,8,3,0,0,0,3,0,0,1,0,0,0,0,3,1,0,0,0,0,No Disorder
+58,20,9,2,1,1,1,1,1,1,1,1,1,1,3,0,0,0,1,5,"Persistent Depressive Disorder**, Substance/Medication Induced Depressive Disorder, Mild GAD, Separation Anxiety Disorder**, Substance/Medication Induced Anxiety Disorder**"
+59,11,7,1,1,1,3,1,1,1,1,0,1,1,3,1,0,0,0,1,No Disorder
+60,14,16,1,1,0,1,1,1,1,1,0,0,1,3,1,0,0,0,0,No Disorder
+61,9,11,1,1,1,1,1,1,1,1,0,1,1,3,0,0,1,0,5,"Separation Anxiety Disorder**, Anxiety Disorder due to Another Medical Condition**"
+62,13,13,2,1,0,1,1,1,1,1,1,1,1,3,0,0,0,0,1,"Moderate MDD, Moderate GAD"
+63,16,13,1,0,0,3,1,1,1,1,0,0,0,3,0,0,0,0,0,No Disorder
+64,8,7,3,0,0,0,0,1,1,1,0,1,0,3,1,0,1,0,4,"Mild MDD, Mild GAD, Social Anxiety Disorder"
+65,23,18,1,1,0,3,1,1,1,1,1,1,1,3,0,0,0,0,4,Agoraphobia
+66,5,2,1,0,0,3,0,0,1,1,1,0,0,3,1,0,0,0,1,No Disorder
+67,10,20,2,1,1,2,1,0,1,1,1,1,1,3,0,0,1,0,5,"Moderate MDD, Severe GAD, Agoraphobia, Anxiety Disorder due to Another Medical Condition**"
+68,23,19,2,1,1,3,1,0,0,1,0,1,1,3,0,0,0,0,5,"Persistent Depressive Disorder**, Severe GAD, Agoraphobia"
+69,17,9,2,0,0,1,1,1,1,1,1,1,1,3,0,0,0,0,4,"Mod Severe MDD, Mild GAD, Separation Anxiety Disorder**"
+70,12,3,2,0,1,1,1,1,1,1,0,1,0,3,0,0,0,0,5,"Moderate MDD, Separation Anxiety Disorder**"
+71,17,12,1,1,1,4,1,1,1,1,0,1,1,3,0,0,0,0,5,Specific Phobia
+72,7,13,1,1,1,1,1,0,1,0,0,1,0,3,1,0,0,0,0,No Disorder
+73,15,13,2,0,0,3,1,0,1,1,1,0,0,3,0,0,0,0,1,Mod Severe MDD
+74,7,6,1,1,1,0,0,0,0,1,0,1,0,3,1,0,0,0,0,No Disorder
+75,9,13,1,0,0,3,1,1,1,1,1,1,0,1,1,0,0,0,4,Agoraphobia
+76,3,1,0,0,0,3,0,0,0,0,1,0,0,3,1,0,0,0,0,No Disorder
+77,27,21,3,1,1,1,1,1,1,1,1,1,1,3,0,1,1,1,5,"Persistent Depressive Disorder**, Depressive Disorder due to Another Medical Condition, Substance/Medication Induced Depressive Disorder, Severe GAD, Separation Anxiety Disorder**, Anxiety Disorder due to Another Medical Condition**, Substance/Medication Induced Anxiety Disorder**"
+78,10,11,1,1,0,3,1,0,1,0,0,0,1,3,0,0,0,0,0,No Disorder
+79,22,17,2,1,1,0,1,1,1,1,1,1,0,3,0,0,0,0,3,"Severe MDD, Severe GAD, Social Anxiety Disorder"
+80,7,7,1,1,0,1,1,0,1,0,0,0,0,3,1,0,0,0,0,No Disorder
+81,10,7,1,0,0,2,0,0,1,1,0,0,1,3,0,0,0,0,1,No Disorder
+82,21,15,1,1,1,4,1,1,1,1,1,1,1,3,0,1,1,0,4,"Specific Phobia, Anxiety Disorder due to Another Medical Condition**"
+83,22,17,3,0,0,0,1,1,1,1,0,1,1,3,1,0,1,0,5,"Persistent Depressive Disorder**, Depressive Disorder due to Another Medical Condition, Severe GAD, Social Anxiety Disorder, Anxiety Disorder due to Another Medical Condition**"
+84,19,16,1,1,1,3,1,1,1,1,0,1,1,3,0,0,0,0,0,No Disorder
+85,13,10,1,1,1,0,1,0,1,0,1,1,1,3,1,0,0,0,4,Social Anxiety Disorder
+86,11,10,1,1,0,3,0,1,1,1,1,1,1,3,0,1,0,0,5,Agoraphobia
+87,6,8,1,0,1,1,1,1,1,1,1,1,1,3,0,0,0,0,2,No Disorder
+88,15,9,1,1,0,4,1,0,0,1,0,1,1,3,0,1,0,0,3,Specific Phobia
