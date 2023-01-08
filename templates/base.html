@@ -30,6 +30,7 @@
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" id='nav-home' href="/">Home</a>
       </li>
+      {% if user.is_authenticated%}
       <li class="nav-item">
         <a class="nav-link" aria-current="page" id='nav-dataset' href="/dataset">Dataset</a>
       </li>
@@ -52,6 +53,16 @@
           <button type="button" class="btn btn-warning">Reload System</button>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">
+          <button type="button" class="btn btn-danger">Log Out</button>
+        </a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" id='nav-login' href="{% url 'login' %}">Sign in</a>
+      </li>
+      {% endif %}
     </ul>
 
     {% block content %}RDR Project{% endblock content %}

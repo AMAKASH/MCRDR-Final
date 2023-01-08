@@ -1,7 +1,9 @@
 import json
 import pandas
 import os
+import numpy
 
+from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
 from django.urls import reverse
@@ -94,6 +96,10 @@ class IndexView(View):
 
 
 def dataset_view(request):
+    if not request.user.is_authenticated:
+        messages.success(
+            request, "You need to be an 'System Expert' to access the requested page. Please Login!!!")
+        return HttpResponseRedirect(reverse('login'))
     initialize()
     global dataset
     global initialized
@@ -111,6 +117,10 @@ def dataset_view(request):
 
 
 def cornerstones_view(request):
+    if not request.user.is_authenticated:
+        messages.success(
+            request, "You need to be an 'System Expert' to access the requested page. Please Login!!!")
+        return HttpResponseRedirect(reverse('login'))
     initialize()
     global cornerstones
     global dataset
@@ -132,6 +142,10 @@ def cornerstones_view(request):
 
 
 def rules_view(request):
+    if not request.user.is_authenticated:
+        messages.success(
+            request, "You need to be an 'System Expert' to access the requested page. Please Login!!!")
+        return HttpResponseRedirect(reverse('login'))
     initialize()
     global features
     column_names = features.copy()
@@ -203,6 +217,10 @@ def rules_view(request):
 
 class TestDatasetView(View):
     def get(self, request):
+        if not request.user.is_authenticated:
+            messages.success(
+                request, "You need to be an 'System Expert' to access the requested page. Please Login!!!")
+            return HttpResponseRedirect(reverse('login'))
         initialize()
         global definitions
 
@@ -224,6 +242,11 @@ class TestDatasetView(View):
         })
 
     def post(self, request, flag=False, tdf=None):
+        if not flag:
+            if not request.user.is_authenticated:
+                messages.success(
+                    request, "You need to be an 'System Expert' to access the requested page. Please Login!!!")
+                return HttpResponseRedirect(reverse('login'))
         initialize()
         global definitions
         global features
@@ -236,7 +259,7 @@ class TestDatasetView(View):
             else:
                 csv = request.FILES['csv']
                 test_df = pandas.read_csv(csv)
-            test_df = run_view("", True, test_dataset=test_df)
+            test_df = run_view(request, True, test_dataset=test_df)
             # print(csv)
         except Exception as e:
             error = 'Error Loading File. Please Upload The Correct Formated CSV file.'
@@ -257,6 +280,10 @@ class TestDatasetView(View):
 
 
 def run_view(request, test=False, test_dataset=None):
+    if not request.user.is_authenticated:
+        messages.success(
+            request, "You need to be an 'System Expert' to access the requested page. Please Login!!!")
+        return HttpResponseRedirect(reverse('login'))
     initialize()
     global dataset
     if test:
@@ -294,12 +321,20 @@ def run_view(request, test=False, test_dataset=None):
 
 
 def reset_view(request):
+    if not request.user.is_authenticated:
+        messages.success(
+            request, "You need to be an 'System Expert' to access the requested page. Please Login!!!")
+        return HttpResponseRedirect(reverse('login'))
     global initialized
     initialized = False
     return HttpResponseRedirect(reverse('dataset-page'))
 
 
 def update_conclusion_view(request):
+    if not request.user.is_authenticated:
+        messages.success(
+            request, "You need to be an 'System Expert' to access the requested page. Please Login!!!")
+        return HttpResponseRedirect(reverse('login'))
     data = json.loads(request.body)
     print(data)
     rule = Rule.objects.get(id=data['update_rule_no'])
@@ -313,6 +348,10 @@ def update_conclusion_view(request):
 
 class AddDataFromTestView(View):
     def post(self, request):
+        if not request.user.is_authenticated:
+            messages.success(
+                request, "You need to be an 'System Expert' to access the requested page. Please Login!!!")
+            return HttpResponseRedirect(reverse('login'))
         global initialized
         df = pandas.read_json(request.session['test_dataset'])
         corrections = request.POST
@@ -340,6 +379,10 @@ class AddDataFromTestView(View):
 class EvalTest(View):
 
     def get(self, request):
+        if not request.user.is_authenticated:
+            messages.success(
+                request, "You need to be an 'System Expert' to access the requested page. Please Login!!!")
+            return HttpResponseRedirect(reverse('login'))
         rules = Rule.objects.all()
         for rule in rules:
             con = json.loads(rule.conditions)
@@ -362,6 +405,10 @@ class EvalTest(View):
 
 class EvaluateSingle(View):
     def get(self, request):
+        if not request.user.is_authenticated:
+            messages.success(
+                request, "You need to be an 'System Expert' to access the requested page. Please Login!!!")
+            return HttpResponseRedirect(reverse('login'))
         global features
         global dataset
         msg = "No Rules found for the Case Please Add a new Rule Above"
@@ -409,6 +456,10 @@ class EvaluateSingle(View):
 
 class AddRule(View):
     def post(self, request):
+        if not request.user.is_authenticated:
+            messages.success(
+                request, "You need to be an 'System Expert' to access the requested page. Please Login!!!")
+            return HttpResponseRedirect(reverse('login'))
         kb = KnowledgeBase.get_kb()
         rule_datas = json.loads(request.body)
         print(rule_datas)
@@ -626,6 +677,8 @@ def pre_process_post_data_for_eval(data):
 
     case = list(raw.iloc[0])
     for i in range(2, 5):
+        if isinstance(case[-i], int) or isinstance(case[-i], numpy.int64):
+            continue
         if 'NO' in case[-i].upper() or "N'T" in case[-i].upper() or "DONT" in case[-i].upper():
             # print(case[-i].upper())
             case[-i] = 0

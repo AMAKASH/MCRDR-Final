@@ -6,16 +6,24 @@
 
 <h1 class="text-center">Home</h1>
 {% if showQuestions %}
-<blockquote class="blockquote p-5 mx-5 my-5">
+<blockquote class="blockquote p-5 mx-5 mb-5">
     <p class="mb-2 text-center">Welcome to our Website. We built this website as a part of our undergrad thesis titled
         <strong>Ripple Down Rule Based Decision Intelligence for Mental Disorder Diagnosis.</strong>
         This system was designed to classify depressive and anxiety disorder along with its severity based on specific
         questions and running the answers through a Rule based Prediction System. Feel Free to Answer the following
         questions and checkout what our system has to say about you. <br>
-        Disclaimer: Your answers <strong>will be</strong> stored for further developement of the system but we dont
-        store (Neither Ask about) data related to your identity. Thank you!
+        Disclaimer: Your answers <strong>will be</strong> stored for further developement of the system but <strong>we
+            don't store (Neither Ask about) data related to your identity</strong>. Thank you!
 </blockquote>
+{% if messages %}
+{% for msg in messages %}
 
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ msg }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+{% endif %}
 <form action="" method="POST" id="qa-form" class='card p-5 mx-5 my-5'>
     <div id="section-A">
         <h3>Section A</h3>
@@ -110,11 +118,18 @@
     {% else %}
     <h4 class="mb-5 text-center">Great News! You have no Mental Disorder Have A great Day!! :)***</h4>
     {% endif %}
-
+    <div class="container ">
+        <div class="col-md-12 text-center">
+            <a href="/"><button type="button" class="btn btn-primary">Try Again</button></a>
+        </div>
+    </div>
     <p> <span style="color: red;">**</span> Need Further Analysis</p>
-    <p><span style="color: red;">***</span> We dont claim our system tobe 100% accurate. We request you to not take our
-    Diagnosis as
-    a professional opinion. In case of Severe Feeling Depression/Axiery we recommend you seek professional help.</p>
+    <p><span style="color: red;">***</span> We don't claim our system to be 100% accurate. We request you to not take
+        our
+        Diagnosis as
+        a professional opinion. In case of Severe Feeling of Depression/Axiety we recommend you to seek professional
+        help.
+    </p>
 </div>
 {% endif %}
 {% endblock content %}

@@ -5,6 +5,7 @@ let page = window.location.pathname;
 if (page != "/") {
   let home_nav = document.getElementById("nav-home");
   let test_nav = document.getElementById("nav-testing");
+  let login_nav = document.getElementById("nav-login");
   let dataset_nav = document.getElementById("nav-dataset");
   let rule_nav = document.getElementById("nav-rules");
   let corner_nav = document.getElementById("nav-cornerstones");
@@ -17,7 +18,9 @@ if (page != "/") {
     dataset_nav.classList.add("active");
   } else if (page == "/dataset/testing") {
     test_nav.classList.add("active");
-  } else {
+  } else if (page == "/experts/login_user") {
+    login_nav.classList.add("active");
+  } else if (page == "/cornerstones") {
     corner_nav.classList.add("active");
   }
 }
