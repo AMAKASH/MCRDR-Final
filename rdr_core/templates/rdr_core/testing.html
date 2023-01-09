@@ -24,7 +24,7 @@
 </div>
 {% endif %}
 
-{% include 'rdr_core/partials/definitions.html' %}
+
 
 {% if dataset_present %}
 <h4 class="text-center"> Test Cases:</h4>
@@ -69,8 +69,10 @@
         <input type="submit" class="btn btn-primary" value="Add All Datapoints To Training Dataset">
     </form>
 </div>
-{% endif %}
 
+
+{% endif %}
+{% include 'rdr_core/partials/definitions.html' %}
 
 {% endblock content %}
 {% block js_files %}

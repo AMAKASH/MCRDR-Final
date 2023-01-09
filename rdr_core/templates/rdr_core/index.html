@@ -76,7 +76,7 @@
             {% if row.1 == 't'%}
             <input type="text" class="form-control w-25" name="qb{{index}}t" required>
             {% elif row.1 == 'c'%}
-            <fieldset>
+            <fieldset required>
                 {% for cell in row%}
                 {% if forloop.counter0 > 2 and cell != '-' %}
                 <div class="d-block">
@@ -110,13 +110,14 @@
 </blockquote>
 <div class="w-100 h-100">
     {% if conclusions %}
-    <h4 class="mb-5 text-center"><span style="color: rgb(64, 61, 250);">You May have the following Disorders
+    <h4 class="mb-5 text-center"><span style="color: rgb(64, 61, 250);">You may have the following Disorders
         </span><span style="color: red;">***</span>:</h4>
     {% for conclusion in conclusions%}
     <h5 class="text-center">{{ conclusion }}</h5><br>
     {% endfor %}
     {% else %}
-    <h4 class="mb-5 text-center">Great News! You have no Mental Disorder Have A great Day!! :)***</h4>
+    <h4 class="mb-5 text-center">Great News! You have no Mental Disorder Have A great Day!! :)</span><span
+            style="color: red;">***</span></h4>
     {% endif %}
     <div class="container ">
         <div class="col-md-12 text-center">
