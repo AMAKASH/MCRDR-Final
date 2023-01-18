@@ -90,8 +90,13 @@ class IndexView(View):
             db_case = Case(case_arr=json_case)
             db_case.save()
 
+        length = 0
+        if conclusion:
+            length = len(conclusion)
+
         return render(request, 'rdr_core/index.html', {
-            'conclusions': conclusion
+            'conclusions': conclusion,
+            'disorder_number': length
         })
 
 

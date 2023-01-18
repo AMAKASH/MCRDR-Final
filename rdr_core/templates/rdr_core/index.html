@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% load static %}
-{% block title %}RDR System{%endblock title %} {% block css_files %}
+{% block title %}Ripple Down Rule Based Decision Intelligence for Mental Disorder Diagnosis{%endblock title %}
+{% block css_files %}
 <link rel="stylesheet" href="{% static 'rdr_core/css/app.css' %}">
 {% endblock css_files %}
 {% block content %}
@@ -115,6 +116,10 @@
     {% for conclusion in conclusions%}
     <h5 class="text-center">{{ conclusion }}</h5><br>
     {% endfor %}
+    {% if disorder_number > 3 %}
+    <h5 class="text-center" style="color: red;">We highly recommend you to consult with a psychiatrist/psychologist</h5>
+    <br>
+    {% endif %}
     {% else %}
     <h4 class="mb-5 text-center">Great News! You have no Mental Disorder Have A great Day!! :)</span><span
             style="color: red;">***</span></h4>
